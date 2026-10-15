@@ -33,7 +33,7 @@ class OriginalBehaviourTests(unittest.TestCase):
         riders = [rider("R1", 12.97, 77.59)]
         cycle(drivers, riders)
         pinged = [d["id"] for d in drivers if d["status"] == "pinged"]
-        self.assertEqual(len(pinged), 999)  # DELIBERATE FAILURE FOR CI VERIFICATION
+        self.assertEqual(len(pinged), 3)
         self.assertNotIn("FAR", pinged)
         self.assertEqual(riders[0]["status"], "driver_pinged")
         self.assertEqual(sorted(riders[0]["driverIds"]), sorted(pinged))
